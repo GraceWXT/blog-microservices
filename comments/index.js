@@ -9,7 +9,9 @@ app.use(bodyParser.json());
 const comments = {};
 
 app.get("/posts/:id/comments", (req, res) => {
-
+  const postId = req.params.id;
+  // Send back the comments array if exists, or empty array if not
+  res.send(comments[postId] || []);
 });
 
 app.post("/posts/:id/comments", (req, res) => {
