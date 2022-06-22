@@ -6,6 +6,8 @@ const { randomBytes } = require("crypto");
 const app = express();
 app.use(bodyParser.json());
 
+const commentsByPostId = {};
+
 app.get("/posts/:id/comments", (req, res) => {
 
 });
