@@ -2,13 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 
 const CommentCreate = (props) => {
-  const { postID } = props;
+  const { postId } = props;
 
   const [content, setContent] = useState("");
 
   const submitComment = async (event) => {
     event.preventDefault();
-    await axios.post(`http://localhost:4001/posts/${postID}/comments`, {content});
+    await axios.post(`http://localhost:4001/posts/${postId}/comments`, {content});
     setContent("");
   };
 
